@@ -88,17 +88,9 @@ cl.EntityDetectionCallback(async (text: string, memoryManager: ClientMemoryManag
 //=================================
 // Define any API callbacks
 //=================================
-/** 
-cl.AddAPICallback("{Name of API}", async (memoryManager: ClientMemoryManager, {arg1}: string, {arg2}: string, ...) => {
-
-    {Your API logic inclusing any service calls}
-        
-    Returns promise of: 
-        (1) undefined -> no message sent to user
-        (2) string -> text message sent to user
-        (3) BB.Activity -> card sent to user
+cl.AddAPICallback("InvoiceStatus", async (memoryManager: ClientMemoryManager, InvoiceId: string) => {
+    return "The status of " + InvoiceId + " is open."
 })
-*/ 
 
 //=================================
 // Handle Incoming Messages
